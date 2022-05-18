@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+@progName Frases
+@Author Milton Abrego Dávila
+//558202
+@date:11/09/20
+@Voltear Frases
+@desc El objetivo del programa es voltear fraces
+/*Doy mi palabra que he realizado esta actividad con integridad academica*/
+
+string voltearFrase(string frase){//aqui las frases se voltean
+@funcName VoltearFrase
+@desc La funcion volteara las frases
+@parametros frase
+@return esarf
+  string esarf;
+  int i=frase.length();
+  do{
+    i--;
+    esarf = esarf + frase[i];
+    
+  }while(i>=0);
+  return esarf;
+}
+
+int main() {
+//se crean las variables y se abre el archivo que contiene los inputs
+@funcName main
+@desc Es la funcion main del programa
+@parametro todo
+@return void
+  ifstream fraseOpen;
+  ofstream frasExit;
+  fraseOpen.open("Frases.txt");
+  frasExit.open("Sesarf.txt");
+  string sesarf;
+  string frases;
+  
+  while(!fraseOpen.eof()){//se corre un ciclo hasta que lea todo el archivo
+
+    getline(fraseOpen,frases);//Consigeu toda la frase
+    sesarf=voltearFrase(frases);//Resive la frase volteada
+    frasExit<<sesarf<<endl;//escribe las frases volteadas en el documento
+
+  }
+  //se cierran los archivos
+  fraseOpen.close();
+  frasExit.close();
+}
